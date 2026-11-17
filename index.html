@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <title>Fait</title>
+  </head>
+  <body>
+    <main class="app">
+      <h1>Fait</h1>
+
+      <form id="new-todo-form" class="new-todo" autocomplete="off">
+        <label for="new-todo-input" class="visually-hidden">Nouvelle tâche</label>
+        <input
+          id="new-todo-input"
+          type="text"
+          maxlength="200"
+          placeholder="Nouvelle tâche…"
+          enterkeyhint="done"
+        />
+        <button type="submit">Ajouter</button>
+      </form>
+
+      <div class="toolbar">
+        <div class="filters" role="group" aria-label="Filtrer les tâches">
+          <button type="button" data-filter="all" aria-pressed="true">Toutes</button>
+          <button type="button" data-filter="active" aria-pressed="false">À faire</button>
+          <button type="button" data-filter="done" aria-pressed="false">Faites</button>
+        </div>
+        <p id="counter" class="counter" aria-live="polite"></p>
+      </div>
+
+      <p id="storage-warning" class="warning" role="alert" hidden>
+        Impossible d'enregistrer dans ce navigateur : les tâches seront perdues en fermant la page.
+      </p>
+
+      <ul id="todo-list" class="todo-list"></ul>
+      <p id="empty-message" class="empty" hidden></p>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
